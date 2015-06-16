@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:context="http://www.springframework.org/schema/context">
+	<bean id="circle" class="edu.sps.aop.beans.Circle">
+		<property name="name" value="circle with diameter 14cm"/>
+	</bean>
+	<bean id="triangle" class="edu.sps.aop.beans.Triangle">
+		<property name="name" value="Equilateral triangle with side 10cm"/>
+	</bean>
+	<bean id="shapeService" class="edu.sps.aop.beans.ShapeService" autowire="byName">
+	</bean>
+	<bean id="myAspect" class="edu.sps.aop.beans.MyAspect"/>
+	<aop:aspectj-autoproxy/>
+</beans>
